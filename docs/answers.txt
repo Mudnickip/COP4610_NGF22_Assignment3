@@ -1,0 +1,91 @@
+#################################################################################
+# Dates of completing the Git Lab Tutorials:                                    #
+#	Learn Git Branching:                                                    #
+#		Main:                                                           #
+#			Introduction Sequence: 10/18/2025                       #
+#			Ramping Up: 10/18/2025                                  #
+#			Moving Work Around: 10/18/2025                          #
+#			A Mixed Bag: 10/18/2025                                 #
+#			Advanced Topics: 10/18/2025                             #
+#		Remote:                                                         #
+#			Push & Pull -- Git Remotes!: 10/18/2025                 #
+#			To Origin and Beyond -- Advanced Git Remotes!: 10/19/25 #
+#	Visualizing Git: 10/19/2025                                             #
+#       Using Git on GitHub Docs: 10/22/2025                                    #
+#                                                                               #
+# Date of setting up the Github Account: 09/27/2019                             #
+#################################################################################
+
+1.) info: please complete authentication in your browser...
+    Enumerating objects: 5, done.
+    Counting objects: 100% (5/5), done.
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 327 bytes | 327.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+    To https://github.com/Mudnickip/COP4610_NGF22_Assignment3.git
+	f4975e5..52f1d0c  master -> master
+
+2.) Currently there are only 8 commits done to this repository. I used the following git command:
+    git rev-list --count --all
+
+3.) The README.md file was last modified on October 22nd 2025 at 19:05:34 (UTC -5). I used the following git command:
+    git log -1 --pretty="format:%ci" --README.md
+
+4.) (i) As branches are pointers to commits, it allows programmers/developers to work on new features that are separated
+        from the main/master branch. This prevents issues from new and untested code from impacting the current working project. 
+    (ii) In a collaborative/shared repository such as a team of developers, branches allow developers to work on different features
+         in separate branches without effecting each other's work or the main/master branch that has the current working project.
+         If multiple developers are working on the same branch, each developer can use a pull request to update the specific branch
+         they are working on and keep up or test their fellow developer's work without impacting the main/master branch.
+
+5.) The command "git log" shows the history of commits in the specified branch. It shows:
+	(i) Author(s) details
+	(ii) Record(s) details
+	(iii) Commit messages
+	(iv) Commit hashes
+
+    Meanwhile the command "git status" shows the current state of the working directory.
+    It informs if the branch is up to date, and which files have been; created, deleted, or modified.
+    It tells the user which files have not been staged, already staged (using the "git add" command), and what has not been committed. 
+
+6.) You would use the "git log" command with the delimiter (--) and specify the file path to Vehicle.h,
+    here is the following format of the command I used:
+	git log --<filePath>/Vehicle.h
+
+7.) You would use the "git log" command - again - with the delimiter (--) and use grep to specify the word "file".
+    You can use the non-option argument "all" to find all the commits that contain the word "file" across all the
+    branches instead of just the current branch. Here is the following command I used:
+	git log --grep="file" --all
+
+8.)
+	(I) Inheritance is where a dervied/child class is defined as an extension of a base/parent class.
+	    The dervied/child class receives the properties, behavior, and access to the functions of the base/parent class.
+
+	(II) Polymorphism is when a method or interface can be applied to multiple objects from different classes take on different behaviors.
+             This is done by overriding the method or interface. A common example is when a child/derived class overrides a method/interface
+	     of a base/parent class.
+
+	(III) Encapsulation is when an object can be considered an independent entity because all the attributes and operations are found and
+              bundled into the object. This allows information hiding as all the work related to the object is done by a method/interface,
+	      which prevents access and modification of the attributes, functions, and data in the object.
+
+9.) In the "Dictator and Lieutenants" workflow, the developers have a respective lieutenant repository that they must push their commits to.
+    There is a hierarchy of command where the lieutenants make the changes and resolve conflicts before pushing the finalized changes to the
+    dictator repository. The directator is the individual who pushes the final changes to the blessed repository.
+    
+    Meanwhile in the "Integration Manager" workflow, each developer has two repositories (public and private) being able to push and pull
+    from their own public repository. Here all the changes and conflicts are handled by a single integration manager that pushes the finalized
+    changes to the blessed repository.
+
+    The main difference is that the "Dictator and Lieutenants" workflow there is a well organized heirarchy, meanwhile in the "Integration Manager"
+    it is just one individual who makes the final decision.
+
+10.) As a team of 100 developers is a relatively large team, if all developers pushed their changes to the central repository without proper
+     conflict resolution and/or verification, at some point it could cause an issue that makes the shared repository fail. The "Centralized"
+     workflow does not work with such a large team as there will be a lack of communication and coordination between developers. This is why
+     they would benefit more from the "Dictator and Lieutenants" workflow as by default there will be managers (known as lieutenants) that
+     can handle small groups of developers at a time, allowing better communication and coordination as changes and conflict resolutions will
+     be handled in multiple repositories before reaching the dictator and therefore the blessed repository. This will allow better backtracking
+     as it would be easier to find possible errors by going through each lieutenant repository and finding commit that is causing the error.
